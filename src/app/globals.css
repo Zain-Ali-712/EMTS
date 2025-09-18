@@ -1,8 +1,13 @@
+/* app/globals.css */
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-1: #b0d684;
+  --color-2: #76b82a;
+  --color-3: #273f43;
+  --color-4: #ffffff;
+  --background: var(--color-3);
+  --foreground: var(--color-4);
 }
 
 @theme inline {
@@ -20,7 +25,7 @@
 }
 
 body {
-  background: var(--background);
+  background: #b0d684;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
