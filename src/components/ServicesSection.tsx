@@ -318,7 +318,7 @@ const ServicesSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
             {[
               { number: "25+", label: "Years of Experience" },
-              { number: "200+", label: "Professional Staff" },
+              { number: "1800+", label: "Professional Staff" },
               { number: "50+", label: "Service Personnel" }
             ].map((stat, index) => (
               <motion.div
