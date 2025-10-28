@@ -1,20 +1,10 @@
 // app/page.tsx
-import HeroSection from '@/components/HeroSection';
-import NewsSection from '@/components/NewsSection';
-import ProductSection from '@/components/ProductsSection';
-import ServicesSection from '@/components/ServicesSection';
-import SocialMediaFloat from '@/components/SocialMediaFloat';
-import Footer from '@/components/Footer';
+import Home from "./home/page";
 
-export default function Home() {
+export default function Page() {
   return (
     <div>
-      <HeroSection />
-      <SocialMediaFloat />
-      <ServicesSection />
-      <ProductSection />  
-      <NewsSection />
-      <Footer />
+      <Home />
     </div>
   );
 }

@@ -13,9 +13,8 @@ const AboutPage = () => {
 
         <main>
         {/* Hero Section with Lab Background */}
-        <section className="relative py-14 mx-16 bg-gradient-to-r from-[#76b82a] to-[#5a8f21] overflow-hidden border rounded-br-3xl rounded-bl-3xl">
+        <section className="relative py-14 lg:mx-16 bg-gradient-to-r from-[#76b82a] to-[#5a8f21] overflow-hidden border rounded-br-3xl rounded-bl-3xl">
           
-
           <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ y: 30, opacity: 0 }}
