@@ -13,8 +13,18 @@ const AboutPage = () => {
 
         <main>
         {/* Hero Section with Lab Background */}
-        <section className="relative py-14 lg:mx-16 bg-gradient-to-r from-[#76b82a] to-[#5a8f21] overflow-hidden border rounded-br-3xl rounded-bl-3xl">
+        <section className="relative py-32 bg-gradient-to-r from-[#76b82a]/80 to-[#5a8f21]/70 overflow-hidden">
           
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0 opacity-65">
+            <img
+              src="/lab_bd.jpg"
+              alt="Medical Services"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#76b82a]/20 to-[#5a8f21]/10"></div>
+          </div>
+
           <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ y: 30, opacity: 0 }}
@@ -28,7 +38,7 @@ const AboutPage = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="inline-block mb-8"
               >
-                <div className="bg-[#76b82a]/80 backdrop-blur-sm border border-[#fff]/30 rounded-full px-6 py-3">
+                <div className="bg-[#76b82a]/20 backdrop-blur-sm border border-[#76b82a]/30 rounded-full px-6 py-3">
                   <span className="text-[#fff]/80 font-light text-lg">Since 1997</span>
                 </div>
               </motion.div>

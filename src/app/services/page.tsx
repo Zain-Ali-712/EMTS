@@ -139,16 +139,16 @@ const ServicesPage = () => {
       address: "Muzaffargarh, Punjab"
     },
     {
-      title: "DHQ Khanewal",
+      title: "DHQ Mianwali",
       images: ["/lab_bd.jpg", "/op.jpg", "/bg.jpg"],
-      description: "Khanewal is a city and the capital of Khanewal District in the Punjab province of Pakistan. It is the host city to the second largest railway station in Pakistan. According to the 2017 Census of Pakistan, its population is 227,059. It is the 36th Biggest city of Pakistan by population.",
-      address: "Khanewal, Punjab"
+      description: "Mianwali , is the capital city of Mianwali District, Pakistan",
+      address: "Mianwali, Punjab"
     },
     {
-      title: "DHQ Lahore",
+      title: "DHQ Layyeh",
       images: ["/bg.jpg", "/lab_bd.jpg", "/op.jpg"],
-      description: "Lahore is the capital of the Pakistani province of Punjab and is the country's 2nd largest city after Karachi. It is a historic and cultural center with numerous landmarks, including the Badshahi Mosque and Lahore Fort.",
-      address: "Lahore, Punjab"
+      description: "Layyah, previously spelled as Leiah, is a city in the Punjab province of Pakistan. The city is headquarter of Layyah District and Layyah Tehsil.",
+      address: "Layyeh, Punjab"
     },
     {
       title: "DHQ Chakwal", 
@@ -163,46 +163,46 @@ const ServicesPage = () => {
       address: "Okara, Punjab"
     },
     {
-      title: "DHQ Faisalabad",
+      title: "DHQ Rajanpur",
       images: ["/bg.jpg", "/op.jpg", "/lab_bd.jpg"],
-      description: "Faisalabad is the third-most-populous city in Pakistan and the second-largest in the eastern province of Punjab. It is a major industrial and distribution center because of its central location in the region.",
-      address: "Faisalabad, Punjab"
+      description: "Rajanpur, is a city and the headquarters of Rajanpur District in the far southwestern part of Punjab, Pakistan. The district is a narrow, 32km to 64km wide strip of land sandwiched between the Indus River on the east and the Sulaiman Mountains on the west.",
+      address: "Rajanpur, Punjab"
     },
     {
-      title: "DHQ Multan",
+      title: "DHQ Khanewal",
       images: ["/op.jpg", "/lab_bd.jpg", "/bg.jpg"],
-      description: "Multan is a city and capital of Multan Division in Punjab, Pakistan. It is one of the five largest urban centers of Pakistan and the major cultural and economic center of southern Punjab.",
-      address: "Multan, Punjab"
+      description: "Khanewal is a city and the capital of Khanewal District in the Punjab province of Pakistan. According to the 2017 Census of Pakistan, its population is 227,059. It is the 36th Biggest city of Pakistan by population.",
+      address: "Khanewal, Punjab"
     },
     {
-      title: "DHQ Rawalpindi",
+      title: "DHQ Toba Tek Singh",
       images: ["/lab_bd.jpg", "/bg.jpg", "/op.jpg"],
-      description: "Rawalpindi is the fourth-largest city in Pakistan by population. It is located in the Punjab province and is the adjacent city to Pakistan's capital Islamabad, forming part of the Islamabad-Rawalpindi metropolitan area.",
-      address: "Rawalpindi, Punjab"
+      description: "Toba Tek Singh, is a city and tehsil of Toba Tek Singh District in the Pakistani province of Punjab.",
+      address: "Toba Tek Singh, Punjab"
     },
     {
-      title: "DHQ Gujranwala",
+      title: "DHQ Narowal",
       images: ["/bg.jpg", "/lab_bd.jpg", "/op.jpg"],
-      description: "Gujranwala is a city and capital of Gujranwala Division located in Punjab, Pakistan. It is also known as 'City of Wrestlers' and is quite famous for its food. The city is a major industrial and agricultural center.",
-      address: "Gujranwala, Punjab"
+      description: "Narowal, is a city in the northeast of the Punjab province of Pakistan. The city is the capital of Narowal District and become Narowal Tehsil in 1989. Narowal is known for its University and for its Faiz Ahmed Park named after the Urdu poet Faiz Ahmed Faiz.",
+      address: "Narowal, Punjab"
     },
     {
-      title: "DHQ Sargodha",
+      title: "DHQ Pakpatan",
       images: ["/op.jpg", "/bg.jpg", "/lab_bd.jpg"],
-      description: "Sargodha is a city in Punjab, Pakistan. It is the capital of Sargodha Division and is known as the 'City of Eagles'. The city is famous for its citrus production and is a major agricultural market.",
-      address: "Sargodha, Punjab"
+      description: "Pakpattan, Pakpattan, often referred to as Pākpattan Sharīf, is the capital city of the Pakpattan District, located in central Punjab province in Pakistan.",
+      address: "Pakpatan, Punjab"
     },
     {
-      title: "DHQ Bahawalpur",
+      title: "DHQ Sheikhupura",
       images: ["/lab_bd.jpg", "/op.jpg", "/bg.jpg"],
-      description: "Bahawalpur is a city in the Punjab province of Pakistan. It is the 11th largest city in Pakistan and is known for its palaces and historical significance. The city lies near the Sutlej River.",
-      address: "Bahawalpur, Punjab"
+      description: "Shekhupura, also known as Qila Sheikhupura is a city in the Pakistani province of Punjab. Founded by the Mughal Emperor Jehangir in 1607, Sheikhupura is now the 16th largest city in Pakistan, and is the headquarters of Sheikhupura District.",
+      address: "Sheikhupura, Punjab"
     },
     {
-      title: "DHQ Sahiwal",
+      title: "DHQ Khushab",
       images: ["/bg.jpg", "/lab_bd.jpg", "/op.jpg"],
-      description: "Sahiwal is a city in Punjab, Pakistan and the capital of both Sahiwal District and Sahiwal Division. The city is an important agricultural center and is known for its Sahiwal cattle breed.",
-      address: "Sahiwal, Punjab"
+      description: "Khushab, is a city as well as a district in the Punjab province of Pakistan. The word Khushab means 'sweet water'. Khushab city also serves as the headquarters of Khushab Tehsil, an administrative subdivision of the district Khushab.",
+      address: "Khushab, Punjab"
     }
   ];
 
@@ -242,7 +242,7 @@ const ServicesPage = () => {
     <div className="min-h-screen bg-white">      
       <main>
         {/* Hero Section */}
-        <section className="relative py-32 bg-gradient-to-br from-black/80 to-black/60 overflow-hidden">
+        <section className="relative py-32 bg-gradient-to-r from-[#76b82a]/80 to-[#5a8f21]/70 overflow-hidden">
           {/* Background Image */}
           <div className="absolute inset-0 z-0 opacity-65">
             <img
@@ -272,7 +272,7 @@ const ServicesPage = () => {
               </motion.div>
               
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-                Our <span className="text-[#76b82a]">Services</span>
+                Our <span className="text-[#9aff27]">Services</span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
                 Comprehensive Healthcare Solutions with Cutting-Edge Technology and Exceptional Service
@@ -683,21 +683,6 @@ const ServicesPage = () => {
               ))}
             </div>
 
-            {/* View All Centers CTA */}
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.4 }}
-              className="text-center mt-12"
-            >
-              <button className="bg-[#76b82a] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#5a8f21] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                View All Centers
-                <svg className="w-5 h-5 ml-2 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </button>
-            </motion.div>
           </div>
         </section>
       </main>
