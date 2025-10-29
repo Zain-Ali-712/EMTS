@@ -2,7 +2,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 const ProductsPage = () => {
@@ -11,39 +10,40 @@ const ProductsPage = () => {
       id: 1,
       title: "Operation Theater Products",
       description: "Complete surgical solutions including operation tables, lights, anesthesia machines, and surgical instruments for modern operating theaters.",
-      image: "/op.jpg",
+      shortDesc: "Complete surgical solutions",
+      image: "/ot.jpg",
       type: "wide",
       position: "left"
     },
     {
       id: 2,
       title: "Emergency Equipment",
-      description: "Critical care equipment including defibrillators, ventilators, patient monitors, and emergency response systems.",
-      image: "/lab_bd.jpg",
+      shortDesc: "Critical care equipment and emergency response systems",
+      image: "/emergency.jpg",
       type: "small",
       position: "top"
     },
     {
       id: 3,
       title: "Gynecologist Products",
-      description: "Specialized equipment for women's health including ultrasound systems, colposcopes, and labor monitoring devices.",
-      image: "/bg.jpg",
+      shortDesc: "Specialized equipment for women's health",
+      image: "/gino.jpg",
       type: "small",
       position: "top"
     },
     {
       id: 4,
       title: "Oxygen Pipeline Systems",
-      description: "Medical gas pipeline systems, oxygen concentrators, flow meters, and complete hospital gas distribution solutions.",
-      image: "/op.jpg",
+      shortDesc: "Medical gas pipeline distribution solutions",
+      image: "/gas.jpg",
       type: "small",
       position: "top"
     },
     {
       id: 5,
       title: "Medical Tubing Products",
-      description: "High-quality medical tubing, IV sets, catheters, and fluid management systems for various medical applications.",
-      image: "/lab_bd.jpg",
+      shortDesc: "High-quality medical tubing systems",
+      image: "/tube.jpg",
       type: "small",
       position: "top"
     },
@@ -51,7 +51,8 @@ const ProductsPage = () => {
       id: 6,
       title: "ICU Equipment",
       description: "Intensive care unit equipment including ICU beds, vital signs monitors, infusion pumps, and critical care ventilators.",
-      image: "/bg.jpg",
+      shortDesc: "Intensive care unit equipment",
+      image: "/icu.jpg",
       type: "wide",
       position: "right"
     },
@@ -59,16 +60,20 @@ const ProductsPage = () => {
       id: 7,
       title: "Diagnostic Products",
       description: "Advanced diagnostic equipment including CT scanners, MRI machines, X-ray systems, and laboratory analyzers.",
-      image: "/op.jpg",
-      type: "wide",
+      image: "/digno.jpg",
+      type: "full",
       position: "top"
     }
   ];
 
+  const handleProductClick = (productId: number) => {
+    // Will implement navigation to product page later
+    console.log(`Navigating to product ${productId}`);
+    // router.push(`/products/${productId}`);
+  };
+
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
-      
       <main>
         {/* Hero Section */}
         <section className="relative py-32 bg-gradient-to-br from-black/80 to-black/60 overflow-hidden">
@@ -142,85 +147,167 @@ const ProductsPage = () => {
             </motion.div>
 
             {/* Product Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {productCategories.map((product, index) => (
+            <div className="space-y-6">
+              {/* Row 1: Wide left + 2 small right */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {/* Wide left */}
                 <motion.div
-                  key={product.id}
-                  initial={{ y: 20, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
+                  initial={{ x: -20, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className={`relative group overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-500 ${
-                    product.type === 'wide' ? 'md:col-span-2 lg:col-span-2' : 'md:col-span-1 lg:col-span-1'
-                  } ${product.type === 'wide' ? 'h-80' : 'h-64'}`}
+                  transition={{ duration: 0.6 }}
+                  className="relative group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all duration-500 h-80 cursor-pointer"
+                  onClick={() => handleProductClick(1)}
                 >
-                  {/* Background Image */}
                   <div className="absolute inset-0">
                     <img
-                      src={product.image}
-                      alt={product.title}
+                      src={productCategories[0].image}
+                      alt={productCategories[0].title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-                    {/* Clean gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-[#76b82a]/10 to-transparent"></div>
                   </div>
+                  <div className="relative h-full flex items-start p-6 md:p-8 text-white">
+                    <div className="max-w-[350px]">
+                      <h3 className="text-2xl md:text-3xl font-bold mb-3 text-gray-700">
+                        {productCategories[0].title}
+                      </h3>
+                      <p className="text-gray-600 text-base leading-relaxed">
+                        {productCategories[0].description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
 
-                  {/* Content */}
-                  <div className={`relative h-full flex text-white p-6 ${
-                    product.position === 'top' ? 'flex-col justify-between' : 
-                    product.position === 'left' ? 'items-center' : 
-                    'items-center justify-end'
-                  }`}>
-                    
-                    {product.position === 'top' && (
-                      <div className="flex flex-col justify-between h-full">
+                {/* 2 small right */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {productCategories.slice(1, 3).map((product, index) => (
+                    <motion.div
+                      key={product.id}
+                      initial={{ x: 20, opacity: 0 }}
+                      whileInView={{ x: 0, opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: (index + 1) * 0.1 }}
+                      className="relative group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all duration-500 h-80 cursor-pointer"
+                      onClick={() => handleProductClick(product.id)}
+                    >
+                      <div className="absolute inset-0">
+                        <img
+                          src={product.image}
+                          alt={product.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-[#76b82a]/10 to-transparent"></div>
+                      </div>
+                      <div className="relative h-full flex flex-col justify-start p-6 text-white">
                         <div>
-                          <h3 className="text-xl font-bold mb-2 group-hover:text-[#76b82a] transition-colors duration-300">
+                          <h3 className="text-xl font-bold mb-2 text-gray-700">
                             {product.title}
                           </h3>
-                          <p className="text-white/90 text-sm leading-relaxed">
-                            {product.description}
+                          <p className="text-gray-600 text-sm">
+                            {product.shortDesc}
                           </p>
                         </div>
-                        <button className="bg-[#76b82a] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#5a8f21] transition-all duration-300 transform hover:scale-105 w-fit">
-                          Explore
-                        </button>
                       </div>
-                    )}
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
 
-                    {product.position === 'left' && (
-                      <div className="max-w-md">
-                        <h3 className="text-2xl md:text-3xl font-bold mb-3 group-hover:text-[#76b82a] transition-colors duration-300">
-                          {product.title}
-                        </h3>
-                        <p className="text-white/90 text-base mb-4 leading-relaxed">
-                          {product.description}
-                        </p>
-                        <button className="bg-[#76b82a] text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#5a8f21] transition-all duration-300 transform hover:scale-105">
-                          Explore Products
-                        </button>
+              {/* Row 2: 2 small left + wide right */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {/* 2 small left */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {productCategories.slice(3, 5).map((product, index) => (
+                    <motion.div
+                      key={product.id}
+                      initial={{ x: -20, opacity: 0 }}
+                      whileInView={{ x: 0, opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      className="relative group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all duration-500 h-80 cursor-pointer"
+                      onClick={() => handleProductClick(product.id)}
+                    >
+                      <div className="absolute inset-0">
+                        <img
+                          src={product.image}
+                          alt={product.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-[#76b82a]/10 to-transparent"></div>
                       </div>
-                    )}
+                      <div className="relative h-full flex flex-col justify-start p-6 text-white">
+                        <div>
+                          <h3 className="text-xl font-bold mb-2 text-gray-700">
+                            {product.title}
+                          </h3>
+                          <p className="text-gray-600 text-sm">
+                            {product.shortDesc}
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
 
-                    {product.position === 'right' && (
-                      <div className="max-w-md text-right">
-                        <h3 className="text-2xl md:text-3xl font-bold mb-3 group-hover:text-[#76b82a] transition-colors duration-300">
-                          {product.title}
-                        </h3>
-                        <p className="text-white/90 text-base mb-4 leading-relaxed">
-                          {product.description}
-                        </p>
-                        <button className="bg-[#76b82a] text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#5a8f21] transition-all duration-300 transform hover:scale-105">
-                          Explore Products
-                        </button>
-                      </div>
-                    )}
+                {/* Wide right */}
+                <motion.div
+                  initial={{ x: 20, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="relative group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all duration-500 h-80 cursor-pointer"
+                  onClick={() => handleProductClick(6)}
+                >
+                  <div className="absolute inset-0">
+                    <img
+                      src={productCategories[5].image}
+                      alt={productCategories[5].title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-[#76b82a]/10 to-transparent"></div>
                   </div>
-
-                  {/* Hover effect */}
-                  <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#76b82a]/30 transition-all duration-300 rounded-xl"></div>
+                  <div className="relative h-full flex items-start justify-end p-6 md:p-8 text-white">
+                    <div className="max-w-[320px] text-right">
+                      <h3 className="text-2xl md:text-3xl font-bold mb-3 text-gray-700">
+                        {productCategories[5].title}
+                      </h3>
+                      <p className="text-gray-600 text-base leading-relaxed">
+                        {productCategories[5].description}
+                      </p>
+                    </div>
+                  </div>
                 </motion.div>
-              ))}
+              </div>
+
+              {/* Row 3: Full width */}
+              <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all duration-500 h-80 cursor-pointer"
+                onClick={() => handleProductClick(7)}
+              >
+                <div className="absolute inset-0">
+                  <img
+                    src={productCategories[6].image}
+                    alt={productCategories[6].title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-[#76b82a]/10 to-transparent"></div>
+                </div>
+                <div className="relative h-full flex items-start p-6 md:p-8 text-white">
+                  <div className="max-w-2xl">
+                    <h3 className="text-2xl md:text-4xl font-bold mb-3 text-gray-700">
+                      {productCategories[6].title}
+                    </h3>
+                    <p className="text-gray-600 text-lg leading-relaxed">
+                      {productCategories[6].description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
             </div>
 
             {/* CTA Section */}
