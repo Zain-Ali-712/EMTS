@@ -13,12 +13,12 @@ const AboutPage = () => {
 
         <main>
         {/* Hero Section with Lab Background */}
-        <section className="relative py-32 bg-gradient-to-r from-[#76b82a]/80 to-[#5a8f21]/70 overflow-hidden">
+        <section className="relative py-32 overflow-hidden">
           
           {/* Background Image */}
-          <div className="absolute inset-0 z-0 opacity-65">
+          <div className="absolute inset-0 z-0">
             <img
-              src="/lab_bd.jpg"
+              src="/lab_bg.jpg"
               alt="Medical Services"
               className="w-full h-full object-cover"
             />
@@ -38,15 +38,15 @@ const AboutPage = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="inline-block mb-8"
               >
-                <div className="bg-[#76b82a]/20 backdrop-blur-sm border border-[#76b82a]/30 rounded-full px-6 py-3">
-                  <span className="text-[#fff]/80 font-light text-lg">Since 1997</span>
+                <div className="bg-[#76b82a]/30 backdrop-blur-sm border border-[#76b82a]/40 rounded-full px-6 py-3">
+                  <span className="text-white font-semibold text-lg">Since 1997</span>
                 </div>
               </motion.div>
               
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-                About <span className="text-[#9aff27]">EMTS</span>
+                About <span className="text-[#76b82a]">EMTS</span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto leading-relaxed">
                 Pioneering Medical Technology Solutions with Excellence & Innovation for Over 25 Years
               </p>
             </motion.div>
@@ -56,12 +56,12 @@ const AboutPage = () => {
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity }}
-            className="absolute bottom-10 left-10 w-4 h-4 bg-[#76b82a] rounded-full opacity-60"
+            className="absolute bottom-10 left-10 w-4 h-4 bg-[#76b82a] rounded-full opacity-70"
           />
           <motion.div
             animate={{ y: [0, -15, 0] }}
             transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-            className="absolute top-20 right-20 w-6 h-6 bg-[#76b82a] rounded-full opacity-40"
+            className="absolute top-20 right-20 w-6 h-6 bg-[#76b82a] rounded-full opacity-50"
           />
         </section>
 

@@ -18,11 +18,11 @@ const Navbar = () => {
       name: 'Products', 
       href: '/products',
       dropdown: [
-        { name: 'Operation Theatre Products', href: '/products/operation-theatre' },
-        { name: 'ICU Products', href: '/products/icu' },
-        { name: 'Diagnostics', href: '/products/diagnostics' },
-        { name: 'Emergency', href: '/products/emergency' },
-        { name: 'Gynecology Products', href: '/products/gynecology' },
+        { name: 'Operation Theatre Products', href: '/products/operation-theater' },
+        { name: 'ICU Products', href: '/products/icu-equipment' },
+        { name: 'Diagnostics', href: '/products/diagnostic-products' },
+        { name: 'Emergency', href: '/products/emergency-equipment' },
+        { name: 'Gynecology Products', href: '/products/gynecologist-products' },
         { name: 'Central Oxygen Gas Pipeline', href: '/products/oxygen-pipeline' },
         { name: 'Pneumatic Tubing System', href: '/products/pneumatic-tubing' }
       ]

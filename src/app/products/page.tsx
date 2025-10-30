@@ -3,8 +3,11 @@
 
 import { motion } from 'framer-motion';
 import Footer from '@/components/Footer';
+import { useRouter } from 'next/navigation';
 
 const ProductsPage = () => {
+  const router = useRouter();
+
   const productCategories = [
     {
       id: 1,
@@ -13,7 +16,8 @@ const ProductsPage = () => {
       shortDesc: "Complete surgical solutions",
       image: "/ot.jpg",
       type: "wide",
-      position: "left"
+      position: "left",
+      slug: "operation-theater"
     },
     {
       id: 2,
@@ -21,7 +25,8 @@ const ProductsPage = () => {
       shortDesc: "Critical care equipment and emergency response systems",
       image: "/emergency.jpg",
       type: "small",
-      position: "top"
+      position: "top",
+      slug: "emergency-equipment"
     },
     {
       id: 3,
@@ -29,7 +34,8 @@ const ProductsPage = () => {
       shortDesc: "Specialized equipment for women's health",
       image: "/gino.jpg",
       type: "small",
-      position: "top"
+      position: "top",
+      slug: "gynecologist-products"
     },
     {
       id: 4,
@@ -37,7 +43,8 @@ const ProductsPage = () => {
       shortDesc: "Medical gas pipeline distribution solutions",
       image: "/gas.jpg",
       type: "small",
-      position: "top"
+      position: "top",
+      slug: "oxygen-pipeline"
     },
     {
       id: 5,
@@ -45,7 +52,8 @@ const ProductsPage = () => {
       shortDesc: "High-quality medical tubing systems",
       image: "/tube.jpg",
       type: "small",
-      position: "top"
+      position: "top",
+      slug: "medical-tubing"
     },
     {
       id: 6,
@@ -54,7 +62,8 @@ const ProductsPage = () => {
       shortDesc: "Intensive care unit equipment",
       image: "/icu.jpg",
       type: "wide",
-      position: "right"
+      position: "right",
+      slug: "icu-equipment"
     },
     {
       id: 7,
@@ -62,26 +71,26 @@ const ProductsPage = () => {
       description: "Advanced diagnostic equipment including CT scanners, MRI machines, X-ray systems, and laboratory analyzers.",
       image: "/digno.jpg",
       type: "full",
-      position: "top"
+      position: "top",
+      slug: "diagnostic-products"
     }
   ];
 
-  const handleProductClick = (productId: number) => {
-    // Will implement navigation to product page later
-    console.log(`Navigating to product ${productId}`);
-    // router.push(`/products/${productId}`);
+  const handleProductClick = (slug: string) => {
+    router.push(`/products/${slug}`);
   };
 
   return (
     <div className="min-h-screen bg-white">
       <main>
         {/* Hero Section */}
-        <section className="relative py-32 bg-gradient-to-br from-black/80 to-black/60 overflow-hidden">
+        <section className="relative py-32 overflow-hidden">
+          
           {/* Background Image */}
-          <div className="absolute inset-0 z-0 opacity-65">
+          <div className="absolute inset-0 z-0">
             <img
-              src="/lab_bd.jpg"
-              alt="Medical Products"
+              src="/lab_bg.jpg"
+              alt="Medical Services"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#76b82a]/20 to-[#5a8f21]/10"></div>
@@ -100,15 +109,15 @@ const ProductsPage = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="inline-block mb-8"
               >
-                <div className="bg-[#76b82a]/20 backdrop-blur-sm border border-[#76b82a]/30 rounded-full px-6 py-3">
-                  <span className="text-[#76b82a] font-semibold text-lg">Medical Equipment</span>
+                <div className="bg-[#76b82a]/30 backdrop-blur-sm border border-[#76b82a]/40 rounded-full px-6 py-3">
+                  <span className="text-white font-semibold text-lg">Medical Equipment</span>
                 </div>
               </motion.div>
               
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
                 Our <span className="text-[#76b82a]">Products</span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto leading-relaxed">
                 Advanced Medical Equipment and Healthcare Solutions from World-Renowned Manufacturers
               </p>
             </motion.div>
@@ -118,12 +127,12 @@ const ProductsPage = () => {
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity }}
-            className="absolute bottom-10 left-10 w-4 h-4 bg-[#76b82a] rounded-full opacity-60"
+            className="absolute bottom-10 left-10 w-4 h-4 bg-[#76b82a] rounded-full opacity-70"
           />
           <motion.div
             animate={{ y: [0, -15, 0] }}
             transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-            className="absolute top-20 right-20 w-6 h-6 bg-[#76b82a] rounded-full opacity-40"
+            className="absolute top-20 right-20 w-6 h-6 bg-[#76b82a] rounded-full opacity-50"
           />
         </section>
 
@@ -157,7 +166,7 @@ const ProductsPage = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
                   className="relative group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all duration-500 h-80 cursor-pointer"
-                  onClick={() => handleProductClick(1)}
+                  onClick={() => handleProductClick(productCategories[0].slug)}
                 >
                   <div className="absolute inset-0">
                     <img
@@ -189,7 +198,7 @@ const ProductsPage = () => {
                       viewport={{ once: true }}
                       transition={{ duration: 0.6, delay: (index + 1) * 0.1 }}
                       className="relative group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all duration-500 h-80 cursor-pointer"
-                      onClick={() => handleProductClick(product.id)}
+                      onClick={() => handleProductClick(product.slug)}
                     >
                       <div className="absolute inset-0">
                         <img
@@ -226,7 +235,7 @@ const ProductsPage = () => {
                       viewport={{ once: true }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
                       className="relative group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all duration-500 h-80 cursor-pointer"
-                      onClick={() => handleProductClick(product.id)}
+                      onClick={() => handleProductClick(product.slug)}
                     >
                       <div className="absolute inset-0">
                         <img
@@ -257,7 +266,7 @@ const ProductsPage = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.3 }}
                   className="relative group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all duration-500 h-80 cursor-pointer"
-                  onClick={() => handleProductClick(6)}
+                  onClick={() => handleProductClick(productCategories[5].slug)}
                 >
                   <div className="absolute inset-0">
                     <img
@@ -287,7 +296,7 @@ const ProductsPage = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
                 className="relative group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all duration-500 h-80 cursor-pointer"
-                onClick={() => handleProductClick(7)}
+                onClick={() => handleProductClick(productCategories[6].slug)}
               >
                 <div className="absolute inset-0">
                   <img
