@@ -187,6 +187,10 @@ interface CategoryData {
 export default function ProductCategoryPage({ params }: { params: { category: string } }) {
   const router = useRouter();
   const categoryData = productCategoriesData[params.category as keyof typeof productCategoriesData] as CategoryData;
+  const handleContactClick = () => {
+      router.push('/contact');
+  };
+
 
   if (!categoryData) {
     return (
@@ -360,7 +364,10 @@ export default function ProductCategoryPage({ params }: { params: { category: st
                   <p className="text-white/90 mb-6 max-w-2xl mx-auto">
                     Contact our experts for tailored solutions that meet your specific healthcare facility requirements.
                   </p>
-                  <button className="bg-white text-[#76b82a] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  <button 
+                    onClick={handleContactClick}
+                    className="bg-white text-[#76b82a] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
                     Contact Our Experts
                     <svg className="w-5 h-5 ml-2 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />

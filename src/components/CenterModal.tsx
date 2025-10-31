@@ -49,21 +49,10 @@ const CenterModal = ({ isOpen, onClose, center }: CenterModalProps) => {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
             transition={{ type: "spring", damping: 25 }}
-            className="bg-white rounded-2xl max-w-5xl w-full max-h-[90vh] md:max-h-[85vh] flex flex-col relative"
+            className="bg-white max-w-5xl w-full max-h-[90vh] md:max-h-[85vh] flex flex-col relative"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Background Pattern with Green Accent */}
-            <div className="absolute inset-0 opacity-5 z-0">
-              <div 
-                className="w-full h-full"
-                style={{
-                  backgroundImage: "url('/bg.jpg')",
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat',
-                }}
-              />
-            </div>
+            
             
             {/* Green Accent Border */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#76b82a] to-[#5a8f21]"></div>

@@ -24,7 +24,7 @@ const Navbar = () => {
         { name: 'Emergency', href: '/products/emergency-equipment' },
         { name: 'Gynecology Products', href: '/products/gynecologist-products' },
         { name: 'Central Oxygen Gas Pipeline', href: '/products/oxygen-pipeline' },
-        { name: 'Pneumatic Tubing System', href: '/products/pneumatic-tubing' }
+        { name: 'Pneumatic Tubing System', href: '/products/pneumatic-tubing'}
       ]
     },
     { name: 'Services', href: '/services' },
