@@ -17,37 +17,37 @@ const router = useRouter();
       id: 1,
       name: "Medical Gas Pipeline Systems",
       description: "Complete medical gas distribution systems for hospitals and healthcare facilities",
-      image: "/gas-pipeline-system.jpg"
+      image: "/tube.jpg"
     },
     {
       id: 2,
       name: "Oxygen Outlets",
       description: "Wall-mounted oxygen outlets with safety features",
-      image: "/oxygen-outlet.jpg"
+      image: "/tube.jpg"
     },
     {
       id: 3,
       name: "Gas Manifolds",
       description: "Central gas manifolds for bulk storage and distribution",
-      image: "/gas-manifold.jpg"
+      image: "/tube.jpg"
     },
     {
       id: 4,
       name: "Flow Meters",
       description: "Precision flow meters for gas control and monitoring",
-      image: "/flow-meter.jpg"
+      image: "/tube.jpg"
     },
     {
       id: 5,
       name: "Pipeline Valves",
       description: "Safety valves and control systems for gas pipelines",
-      image: "/pipeline-valves.jpg"
+      image: "/tube.jpg"
     },
     {
       id: 6,
       name: "Monitoring Systems",
       description: "Real-time monitoring and alarm systems for gas pipelines",
-      image: "/monitoring-system.jpg"
+      image: "/tube.jpg"
     }
   ];
 

@@ -7,11 +7,12 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 export default function ContactPage() {
-
   const router = useRouter();
+  
   const handleClick = () => {
     router.push('https://www.facebook.com/EMTSPK/?ref=br_rs&_rdc=1&_rdr#');
   };  
+  
   const [selectedCity, setSelectedCity] = useState('Lahore');
   const [formData, setFormData] = useState({
     name: '',
@@ -20,13 +21,37 @@ export default function ContactPage() {
     message: ''
   });
 
+  // City data with map embed URLs
   const cities = [
-    { name: 'Lahore', coordinates: '31.5204° N, 74.3587° E' },
-    { name: 'Karachi', coordinates: '24.8607° N, 67.0011° E' },
-    { name: 'Multan', coordinates: '30.1575° N, 71.5249° E' },
-    { name: 'Peshawar', coordinates: '34.0151° N, 71.5249° E' },
-    { name: 'Quetta', coordinates: '30.1798° N, 66.9750° E' }
+    { 
+      name: 'Lahore', 
+      coordinates: '31.5204° N, 74.3587° E',
+      mapUrl: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d54407.67070387706!2d74.347238!3d31.538455000000003!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391904e880051421%3A0x2c08ec73c354f2c3!2sEastern%20Medical%20Technology%20Services!5e0!3m2!1sen!2sus!4v1763029607971!5m2!1sen!2sus'
+    },
+    { 
+      name: 'Karachi', 
+      coordinates: '24.8607° N, 67.0011° E',
+      mapUrl: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d57882.434543707066!2d67.06237800000001!3d24.943917!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f626ba507f5%3A0x8a2e2480bab9cab!2sSky%20Residency!5e0!3m2!1sen!2sus!4v1763029729977!5m2!1sen!2sus'
+    },
+    { 
+      name: 'Multan', 
+      coordinates: '30.1575° N, 71.5249° E',
+      mapUrl: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d55170.9745166188!2d71.449138!3d30.203241000000002!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b33c3489617cf%3A0x899039446e68adcb!2sDost%20Plaza%2C%20Al%20Rahim%20Colony%2C%20Multan%2C%20Pakistan!5e0!3m2!1sen!2sus!4v1763028948171!5m2!1sen!2sus'
+    },
+    { 
+      name: 'Peshawar', 
+      coordinates: '34.0151° N, 71.5249° E',
+      mapUrl: 'https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d52935.42384168501!2d71.439783!3d33.980614!3m2!1i1024!2i768!4f13.1!2m1!1sN-1%2CPhase-IV%2C%20Hayattabad%2C%20Peshawar.!5e0!3m2!1sen!2sus!4v1763029861793!5m2!1sen!2sus'
+    },
+    { 
+      name: 'Quetta', 
+      coordinates: '30.1798° N, 66.9750° E',
+      mapUrl: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d55174.71213689156!2d67.011837!3d30.196572!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ed2de3abbe7b6d7%3A0x6a0010b2bf07339!2sAhmed%20Complex!5e0!3m2!1sen!2sus!4v1763029968447!5m2!1sen!2sus'
+    }
   ];
+
+  // Get current city data
+  const currentCity = cities.find(city => city.name === selectedCity);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -157,8 +182,9 @@ export default function ContactPage() {
                       <h3 className="font-semibold text-gray-900 mb-1">Social Media</h3>
                       <p className="text-gray-700 mb-2">For more details and updates visit our Facebook Page:</p>
                       <button 
-                      onClick={handleClick}
-                      className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 flex items-center">
+                        onClick={handleClick}
+                        className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 flex items-center"
+                      >
                         <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                         </svg>
@@ -236,15 +262,6 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  {/* CAPTCHA Placeholder */}
-                  <div className="bg-gray-100 rounded-lg p-4 text-center">
-                    <p className="text-sm text-gray-600 mb-2">I'm not a robot</p>
-                    <p className="text-xs text-gray-500 mb-3">nCARTOMA is changing its terms of service.</p>
-                    <div className="bg-[#76b82a] text-white px-4 py-2 rounded inline-block text-sm font-semibold">
-                      SIGNATI
-                    </div>
-                  </div>
-
                   {/* Submit Button */}
                   <motion.button
                     whileHover={{ scale: 1.02 }}
@@ -282,14 +299,14 @@ export default function ContactPage() {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 sm:grid sm:grid-cols-4 gap-8">
               {/* City Selector */}
               <motion.div
                 initial={{ x: -30, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="lg:col-span-1"
+                className="sm:col-span-1"
               >
                 <div className="bg-gray-50 rounded-2xl p-6 shadow-lg">
                   <h3 className="text-xl font-bold text-gray-900 mb-6">Select City</h3>
@@ -322,36 +339,24 @@ export default function ContactPage() {
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="lg:col-span-3"
+                className="sm:col-span-3"
               >
-                <div className="bg-gradient-to-br from-[#76b82a]/10 to-[#5a8f21]/5 rounded-2xl shadow-2xl overflow-hidden h-96 relative">
-                  {/* Map Placeholder */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="bg-white rounded-xl p-8 shadow-lg inline-block">
-                        <div className="w-16 h-16 bg-[#76b82a] rounded-full flex items-center justify-center mx-auto mb-4">
-                          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                          </svg>
-                        </div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">{selectedCity} Branch</h3>
-                        <p className="text-gray-600 mb-2">{cities.find(c => c.name === selectedCity)?.coordinates}</p>
-                        <p className="text-sm text-gray-500">Interactive map will be integrated here</p>
-                      </div>
-                    </div>
+                <div className="bg-gradient-to-br from-[#76b82a]/10 to-[#5a8f21]/5 rounded-2xl shadow-2xl overflow-hidden h-full relative">
+                  {/* Dynamic Map Iframe */}
+                  <div className="absolute inset-0">
+                    <iframe 
+                      src={currentCity?.mapUrl}
+                      width="100%" 
+                      height="100%" 
+                      style={{ border: 0 }} 
+                      allowFullScreen 
+                      loading="lazy" 
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title={`${selectedCity} Branch Location`}
+                    ></iframe>
                   </div>
 
-                  {/* Map Overlay Elements */}
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg">
-                    <span className="text-sm font-semibold text-gray-700">{selectedCity} - Pakistan</span>
-                  </div>
                   
-                  <div className="absolute bottom-4 right-4 bg-[#76b82a] text-white rounded-full p-3 shadow-lg">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                    </svg>
-                  </div>
                 </div>
               </motion.div>
             </div>

@@ -16,37 +16,37 @@ const productCategoriesData = {
         id: 1,
         name: "Operation Tables",
         description: "Advanced surgical operation tables with hydraulic and electric controls",
-        image: "/ot-table.jpg"
+        image: "/ot.jpg"
       },
       {
         id: 2,
         name: "Surgical Lights",
         description: "LED surgical lights with shadow management technology",
-        image: "/ot-lights.jpg"
+        image: "/ot.jpg"
       },
       {
         id: 3,
         name: "Anesthesia Machines",
         description: "Modern anesthesia workstations with ventilation systems",
-        image: "/anesthesia.jpg"
+        image: "/ot.jpg"
       },
       {
         id: 4,
         name: "Electrosurgical Units",
         description: "Advanced electrosurgical generators and accessories",
-        image: "/electrosurgical.jpg"
+        image: "/ot.jpg"
       },
       {
         id: 5,
         name: "Surgical Instruments",
         description: "Comprehensive range of surgical instruments and sets",
-        image: "/instruments.jpg"
+        image: "/ot.jpg"
       },
       {
         id: 6,
         name: "Patient Monitoring",
         description: "Real-time patient monitoring during surgical procedures",
-        image: "/monitoring.jpg"
+        image: "/ot.jpg"
       }
     ]
   },
@@ -59,25 +59,25 @@ const productCategoriesData = {
         id: 1,
         name: "Defibrillators",
         description: "AED and manual defibrillators for emergency cardiac care",
-        image: "/defibrillator.jpg"
+        image: "/emergency.jpg"
       },
       {
         id: 2,
         name: "Emergency Ventilators",
         description: "Portable and transport ventilators for critical care",
-        image: "/ventilator.jpg"
+        image: "/emergency.jpg"
       },
       {
         id: 3,
         name: "Patient Monitors",
         description: "Multi-parameter monitoring for critical patients",
-        image: "/patient-monitor.jpg"
+        image: "/emergency.jpg"
       },
       {
         id: 4,
         name: "Infusion Pumps",
         description: "Precision infusion pumps for medication delivery",
-        image: "/infusion-pump.jpg"
+        image: "/emergency.jpg"
       }
     ]
   },
@@ -90,19 +90,19 @@ const productCategoriesData = {
         id: 1,
         name: "Ultrasound Systems",
         description: "Advanced ultrasound for gynecology and obstetrics",
-        image: "/ultrasound.jpg"
+        image: "/gino.jpg"
       },
       {
         id: 2,
         name: "Colposcopes",
         description: "Digital colposcopes for detailed cervical examination",
-        image: "/colposcope.jpg"
+        image: "/gino.jpg"
       },
       {
         id: 3,
         name: "Fetal Monitors",
         description: "Fetal monitoring systems for labor and delivery",
-        image: "/fetal-monitor.jpg"
+        image: "/gino.jpg"
       }
     ]
   },
@@ -115,25 +115,25 @@ const productCategoriesData = {
         id: 1,
         name: "ICU Beds",
         description: "Electric ICU beds with advanced patient positioning",
-        image: "/icu-bed.jpg"
+        image: "/icu.jpg"
       },
       {
         id: 2,
         name: "Vital Signs Monitors",
         description: "Multi-parameter patient monitoring systems",
-        image: "/vital-monitor.jpg"
+        image: "/icu.jpg"
       },
       {
         id: 3,
         name: "Critical Care Ventilators",
         description: "Advanced ventilators for intensive care units",
-        image: "/critical-ventilator.jpg"
+        image: "/icu.jpg"
       },
       {
         id: 4,
         name: "Syringe Pumps",
         description: "Precision syringe pumps for critical care",
-        image: "/syringe-pump.jpg"
+        image: "/icu.jpg"
       }
     ]
   },
@@ -146,25 +146,25 @@ const productCategoriesData = {
         id: 1,
         name: "CT Scanner",
         description: "Advanced computed tomography systems",
-        image: "/ct-scanner.jpg"
+        image: "/digno.jpg"
       },
       {
         id: 2,
         name: "MRI Machines",
         description: "Magnetic resonance imaging systems",
-        image: "/mri.jpg"
+        image: "/digno.jpg"
       },
       {
         id: 3,
         name: "X-Ray Systems",
         description: "Digital X-ray imaging systems",
-        image: "/xray.jpg"
+        image: "/digno.jpg"
       },
       {
         id: 4,
         name: "Ultrasound Machines",
         description: "Diagnostic ultrasound systems",
-        image: "/diagnostic-ultrasound.jpg"
+        image: "/digno.jpg"
       }
     ]
   }

@@ -48,12 +48,12 @@ const ProductsPage = () => {
     },
     {
       id: 5,
-      title: "Medical Tubing Products",
+      title: "Pneumatic Tubing Products",
       shortDesc: "High-quality medical tubing systems",
       image: "/tube.jpg",
       type: "small",
       position: "top",
-      slug: "medical-tubing"
+      slug: "pneumatic-tubing"
     },
     {
       id: 6,
